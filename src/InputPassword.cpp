@@ -4,10 +4,6 @@
   @author Albert Lazaro de Lara
   */
 
-#if !defined(_WIN32) || !defined(_WIN64)
-#include <cstdlib>
-#include <csignal>
-#endif
 
 #include <iostream>
 #include <regex>
@@ -21,9 +17,10 @@ namespace CliWidget {
     }
 
     void InputPassword::display() {
-        changeTerminalMode(false);
+        _terminal.showInput(false);
+        _terminal.showCursor(false);
         getline(std::cin, _value);
-        changeTerminalMode(true);
+        _terminal.reset();
     }
 
     bool InputPassword::check() {
@@ -32,34 +29,5 @@ namespace CliWidget {
 
     void InputPassword::setRegex(std::string regex) {
         _regex = regex;
-    }
-
-    void InputPassword::changeTerminalMode(bool reset) {
-#if defined(_WIN32) || defined(_WIN64)
-        hstdin = GetStdHandle(STD_INPUT_HANDLE);
-        if (!reset) {
-            GetConsoleMode(hstdin, &mode);
-            SetConsoleMode(hstdin, mode & ~ENABLE_ECHO_INPUT);
-        }
-        else {
-            SetConsoleMode(hstdin, mode);
-        }
-#else
-        if (!reset) {
-            // disable printing of keys as they're pressed
-            system("stty -echo");
-
-            atexit([](){
-                    //Reset the terminal to a sensible state
-                    system("stty sane; tput cnorm");
-                    });
-
-            // Ensure clean exit to reset the terminal if the program is killed
-            signal(SIGTERM, [](int){exit(1);});
-        }
-        else {
-            system("stty sane");
-        }
-#endif
     }
 }

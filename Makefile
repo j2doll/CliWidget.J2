@@ -2,7 +2,7 @@
 
 CXX        = g++
 CXXFLAGS   = -g -Wall -fpic
-OBJECTS    = main.o Select.o MultiSelect.o List.o Text.o InputPassword.o
+OBJECTS    = main.o Select.o MultiSelect.o List.o Text.o InputPassword.o Terminal.o
 LIBRARYOBJ = Select.o MultiSelect.o List.o Text.o InputPassword.o
 
 ############################ 
@@ -27,6 +27,9 @@ Text.o: src/Text.cpp src/Text.hpp
 
 InputPassword.o: src/InputPassword.cpp src/InputPassword.hpp
 	$(CXX) $(CXXFLAGS) -c src/InputPassword.cpp
+
+Terminal.o: src/Terminal.cpp src/Terminal.hpp
+	$(CXX) $(CXXFLAGS) -c src/Terminal.cpp
 
 ############################
 

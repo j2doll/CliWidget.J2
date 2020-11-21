@@ -2,7 +2,6 @@
   Select widget: contains the implementation of the class Select 
   @file Select.cpp
   @author Albert Lazaro de Lara
-  @version 0.1 11/09/20 
   */
 
 #if defined(_WIN32) || defined(_WIN64)
@@ -82,7 +81,9 @@ namespace CliWidget {
         unsigned int c;
         bool arrowKeyPressed = false;
 
-        changeTerminalMode(false);
+        _terminal.showInput(false);
+        _terminal.showCursor(false);
+        _terminal.enableSpecialCharacterProcessing(true);
         std::cout << getTextToPrint();
 
         do {
@@ -104,7 +105,7 @@ namespace CliWidget {
             }
         } while(c != KEY_ENTER);
 
-        changeTerminalMode(true);
+        _terminal.reset();
 #endif
     }
 

@@ -7,10 +7,8 @@
 #ifndef INPUT_PASSWORD
 #define INPUT_PASSWORD
 
-#if defined(_WIN32) || defined(_WIN64)
-#include <windows.h>
-#endif
 #include <string>
+#include "Terminal.hpp"
 
 namespace CliWidget {
 
@@ -40,7 +38,8 @@ namespace CliWidget {
 
             /**
               If a regex is setted, check if the password pass the regex
-              @return true if regex is not setted or if the password pass the regex, false otherwise
+              @return true if regex is not setted or if the password pass the regex,
+              false otherwise
               */
             bool check();
         private:
@@ -54,18 +53,7 @@ namespace CliWidget {
               */
             std::string _regex;
 
-            /**
-              Hide the terminal input and the cursor.
-              @param reset If true reset the terminal to default, else hides the input and the cursor
-             **/
-            void changeTerminalMode(bool reset);
-
-#if defined(_WIN32) || defined(_WIN64)
-        private:
-            HANDLE    hstdin;
-            DWORD     mode;
-#endif
+            CliWidget::Terminal _terminal;
     };
 }
-
 #endif
