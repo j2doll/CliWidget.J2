@@ -2,7 +2,6 @@
   Input password: contains the definition of the class InputPassword
   @file InputPassword.cpp
   @author Albert Lazaro de Lara
-  @version 0.1 11/09/20 
   */
 
 #if !defined(_WIN32) || !defined(_WIN64)

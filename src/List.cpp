@@ -2,7 +2,6 @@
 List: contains the implementation of the class List
 @file List.cpp
 @author Albert Lazaro de Lara
-@version 0.1 11/09/20 
 */
 
 #if !defined(_WIN32) || !defined(_WIN64)
