@@ -9,12 +9,12 @@ Terminal: contains the definition of the class Terminal
 
 namespace CliWidget {
 
-    void Terminal::showCursor(bool show) {
+    std::string Terminal::showCursor(bool show) {
         if (show) {
-            system("tput cnorm");
+            return "\e[?25h";
         }
         else {
-            system("tput civis");
+            return "\e[?25l";
         }
     }
 

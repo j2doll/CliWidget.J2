@@ -18,9 +18,10 @@ namespace CliWidget {
 
     void InputPassword::display() {
         _terminal.showInput(false);
-        _terminal.showCursor(false);
+        std::cout << _terminal.showCursor(false);
         getline(std::cin, _value);
         _terminal.reset();
+        std::cout << _terminal.showCursor(true);
     }
 
     bool InputPassword::check() {
