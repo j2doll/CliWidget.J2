@@ -28,7 +28,7 @@ namespace CliWidget {
              show or hide the input that the user is writting in terminal
              @param show True to show, False to hide
              */
-            void showInput(bool show);
+            std::string showInput(bool show);
 
             /**
              enable the processing of character one by one

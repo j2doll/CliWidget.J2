@@ -81,7 +81,7 @@ namespace CliWidget {
         unsigned int c;
         bool arrowKeyPressed = false;
 
-        _terminal.showInput(false);
+        std::cout << _terminal.showInput(false);
         std::cout << _terminal.showCursor(false);
         _terminal.enableSpecialCharacterProcessing(true);
         std::cout << getTextToPrint();
@@ -106,6 +106,7 @@ namespace CliWidget {
         } while(c != KEY_ENTER);
 
         _terminal.reset();
+        std::cout << _terminal.showInput(true);
         std::cout << _terminal.showCursor(true);
 #endif
     }

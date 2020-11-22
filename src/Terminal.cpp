@@ -18,12 +18,12 @@ namespace CliWidget {
         }
     }
 
-    void Terminal::showInput(bool show) {
+    std::string Terminal::showInput(bool show) {
         if (show) {
-            system("stty echo");
+            return "\e[m";
         }
         else {
-            system("stty -echo");
+            return "\e[8m";
         }
     }
 
