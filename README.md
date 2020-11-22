@@ -12,10 +12,7 @@ CliWidgets has been tested on Windows 10 (x64) and Linux (Ubuntu x64).
 For Linux, the requisites are:
 
 * A **C++11** compiler.
-* The **stty** linux utility which I use to hide the terminal input for InputPassword and for hide the arrow keys when selecting an option in menus. 
-* The **tput** to hide / restore the terminal cursor.
-
-
+* The **stty** linux utility which I use to hide the terminal input for InputPassword and for hide the arrow keys when selecting an option in menus. Also I use this for get one character from the input with `stty -cbreak min 1`. 
 
 ## Compile
 
