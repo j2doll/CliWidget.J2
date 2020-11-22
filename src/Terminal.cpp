@@ -29,7 +29,7 @@ namespace CliWidget {
 
     void Terminal::enableSpecialCharacterProcessing(bool enable) {
         if (enable) {
-            system("stty cbreak min 1 -echo");
+            system("stty cbreak min 1");
         }
         else {
             system("stty sane");
