@@ -29,19 +29,19 @@ namespace CliWidget {
     }
 
     void Text::setBold(bool enable) {
-        _bold = enable;
+        formats.set(TextFormats::bold, true);
     }
 
     void Text::setUnderline(bool enable) {
-        _underline = enable;
+        formats.set(TextFormats::underline, true);
     }
 
     void Text::setBlink(bool enable) {
-        _blink = enable;
+        formats.set(TextFormats::blink, true);
     }
 
     void Text::setItalic(bool enable) {
-        _italic = enable;
+        formats.set(TextFormats::italic, true);
     }
 
     void Text::display() {
@@ -49,13 +49,13 @@ namespace CliWidget {
             std::cout << "\033[" << _bgrColor << "m";
         if (_fgrColor != CliWidget::ForegroundColor::NONE)
             std::cout << "\033[" << _fgrColor << "m";
-        if (_bold)
+        if (formats.test(TextFormats::bold))
             std::cout << "\033[" << "1m";
-        if (_underline)
+        if (formats.test(TextFormats::underline))
             std::cout << "\033[" << "4m";
-        if (_blink)
+        if (formats.test(TextFormats::blink))
             std::cout << "\033[" << "5m";
-        if (_italic)
+        if (formats.test(TextFormats::italic))
             std::cout << "\033[" << "3m";
         std::cout << _text << "\033[0m" << std::endl;
     }

@@ -2,7 +2,6 @@
 ColorsEnum: contains the enums for the terminal colors
 @file ColorsEnum.hpp
 @author Albert Lazaro de Lara
-@version 0.1 11/09/20 
 */
 
 #ifndef COLORS_HPP

@@ -2,7 +2,6 @@
   Text widget: contains the definition of the class Text
   @file Text.hpp
   @author Albert Lazaro de Lara
-  @version 0.1 11/09/20 
   */
 
 #ifndef TEXT_HPP
@@ -12,6 +11,7 @@
 #include <iostream>
 
 #include "ColorsEnum.hpp"
+#include "TextFormats.hpp"
 
 namespace CliWidget {
 
@@ -86,24 +86,9 @@ namespace CliWidget {
             std::string _text;
 
             /**
-              The underline format flag
+              The diferent text formats 
               */
-            bool _underline = false;
-
-            /**
-              The bold format flag
-              */
-            bool _bold = false;
-
-            /**
-              The blink format flag
-              */
-            bool _blink = false;
-
-            /**
-              The italic format flag
-              */
-            bool _italic = false;
+            Flags<TextFormats> formats;
 
             /**
               The foreground color
