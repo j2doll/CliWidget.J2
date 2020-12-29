@@ -118,7 +118,7 @@ namespace CliWidget {
             static const int KEY_UP = 65;
             static const int KEY_DOWN = 66;
             static const int KEY_SPACE = 32;
-            static const int KEY_ENTER = 13;
+            static const int KEY_ENTER = '\n'; //13;
 #endif
     };
 }
