@@ -137,3 +137,5 @@ for (std::string value : multiSelect.getSelectedValues())
 ```
 
 ![MultiSelect gif](https://i.imgur.com/cbQuZmo.gif "MultiSelect")
+
+
