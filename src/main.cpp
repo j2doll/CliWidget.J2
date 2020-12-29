@@ -8,26 +8,24 @@
 #include "InputPassword.hpp"
 
 int main() {
-    CliWidget::Select select(std::vector<std::string> {"One", "Two", "Three 한글"});
-    CliWidget::MultiSelect multiSelect(std::vector<std::string>{"Cat", "Dog", "Hamster", "Bird", "Fish"});
 
+    CliWidget::Select select(std::vector<std::string> {"One", "Two", "Three 한글"});
     select.setBackgroundColor(CliWidget::BackgroundColor::GREEN);
     select.display();
 
     CliWidget::Text text1("Selected index is " + std::to_string(select.getSelectedIndex()) + "");
-    CliWidget::Text text2("Selected value is " + select.getSelectedValue() + "");
-
-    text1.setBackgroundColor(CliWidget::BackgroundColor::GREEN);
+    // text1.setBackgroundColor(CliWidget::BackgroundColor::GREEN);
     text1.setForegroundColor(CliWidget::ForegroundColor::BLUE);
     text1.setUnderline(true);
     text1.setBold(true);
+    text1.display();
 
+    CliWidget::Text text2("Selected value is " + select.getSelectedValue() + "");
     text2.setItalic(true);
     text2.setBlink(true);
-
-    text1.display();
     text2.display();
 
+    CliWidget::MultiSelect multiSelect(std::vector<std::string>{"Cat", "Dog", "Hamster", "Bird", "Fish"});
     multiSelect.setBackgroundColor(CliWidget::BackgroundColor::BLUE);
     multiSelect.display();
 
