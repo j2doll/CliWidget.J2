@@ -8,7 +8,7 @@
 #include "InputPassword.hpp"
 
 int main() {
-    CliWidget::Select select(std::vector<std::string> {"One", "Two", "Three"});
+    CliWidget::Select select(std::vector<std::string> {"One", "Two", "Three 한글"});
     CliWidget::MultiSelect multiSelect(std::vector<std::string>{"Cat", "Dog", "Hamster", "Bird", "Fish"});
 
     select.setBackgroundColor(CliWidget::BackgroundColor::GREEN);
@@ -60,7 +60,7 @@ int main() {
     textResult.display();
 
     if (!inputPsw.check()) {
-        CliWidget::Text textResult("The entered password is short");
+        CliWidget::Text textResult("The password is too short.");
         textResult.display();
     }
 
