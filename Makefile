@@ -1,3 +1,7 @@
+#
+# Makefile
+#
+
 ### variables ##############
 
 CXX        = g++
@@ -42,4 +46,9 @@ dynamic: $(LIBRARYOBJ)
 # The "-" in -rm causes make to continue in spite of errors from rm
 .PHONY: clean
 clean:
-	-rm $(OBJECTS) output libCliWidgets.a libCliWidgets.so
+	rm -f $(OBJECTS) output libCliWidgets.a libCliWidgets.so
+
+
+
+
+
