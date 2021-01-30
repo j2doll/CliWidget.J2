@@ -26,7 +26,7 @@ int main() {
     text2.setBlink(true);
     text2.display();
 
-    CliWidget::MultiSelect multiSelect(std::vector<std::string>{"Cat", "Dog", "Hamster", "Bird", "Fish"});
+    CliWidget::MultiSelect multiSelect(std::vector<std::string>{"Cat", "Dog 개", "Hamster", "Bird 새", "Fish"});
     multiSelect.setBackgroundColor(CliWidget::BackgroundColor::BLUE);
     multiSelect.display();
 
